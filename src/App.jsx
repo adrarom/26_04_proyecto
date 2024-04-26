@@ -37,6 +37,7 @@ useEffect(() => {
 },[listState,inputState]);
 const addNewMember = () =>{
   setListState([...listState,{title : newInputText , completed: false}]);
+  setNewInputText("");
 }
   return (
     <>
@@ -45,7 +46,7 @@ const addNewMember = () =>{
         <button onClick={addNewMember}>Add</button>
       </div>
       <input type='text' placeholder={ inputState === '' &&
-        'puedes filtrar con este input'q} value={inputState} onChange={(e) => setInputState(e.target.value)}>
+        'puedes filtrar con este input'} value={inputState} onChange={(e) => setInputState(e.target.value)}>
 
       </input>
         
