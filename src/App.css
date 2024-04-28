@@ -8,13 +8,3 @@ ul{
   list-style: none;
   margin:0;
 }
-li:nth-child(even){
-  border: 2px solid black;
-  background-color: #F16821;
-  padding: 1rem 1rem;
-}
-li:nth-child(odd){
-  border: 2px solid black;
-  background-color: #FAB95B;
-  padding: 1rem 1rem;
-}

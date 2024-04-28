@@ -21,23 +21,30 @@ const CardGenerator = () =>{
       };
     return(
         <>
-        <div className="flex gap-10">
+        <div className="flex gap-10 justify-start items-start m-4">
             {actualCards.map((element,index) => {
                 return <Card key={index} id={index} title={element}/>
             })}
+          <div className=" h-20">
             {isFormVisible ? (
-          <form onSubmit={handleSubmit}>
+          <form 
+            onSubmit={handleSubmit}
+            className="p-6 rounded-lg shadow flex flex-col"
+            style={{backgroundColor: "#303642"}}>
             <input
               type="text"
               value={newCardText}
               onChange={handleInputChange}
               placeholder="Enter card text"
+              className='rounded-full p-3'
+              
             />
-            <button type="submit">Add Card</button>
+            <button type="submit" className='rounded-full w-full py-3 mt-4'>Add Card</button>
           </form>
         ) : (
-          <button onClick={handleAddCard}>Add new card +</button>
+          <button onClick={handleAddCard} className="w-56 rounded-full">Add new card +</button>
         )}
+          </div>
         </div>
         </>
     )
