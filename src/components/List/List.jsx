@@ -1,8 +1,7 @@
-// List.js
 import React, { useState } from "react";
 import Timer from "../Timer/Timer";
 
-const List = (props) => {
+const List = ({ id, title, handleDelete, deadline }) => {
     const [isDestroyed, setIsDestroyed] = useState(false);
 
     const deleteTask = () => {
@@ -12,16 +11,16 @@ const List = (props) => {
     return (
         <>
             {!isDestroyed && (
-                <li key={props.key} className="shadow p-4 my-2 rounded-3xl w-full">
+                <li key={id} className="shadow p-4 my-2 rounded-3xl w-full">
                     <div className="flex items-center">
-                        <span className="font-semibold">{props.title}</span>
+                        <span className="font-semibold">{title}</span>
                         <a
                             className="fa-solid fa-trash ml-auto px-3 text-red-400 hover:text-white transition-colors duration-300"
-                            onClick={() => {props.handleDelete(); deleteTask();}}
+                            onClick={() => { handleDelete(id); deleteTask(); }}
                         ></a>
                     </div>
                     <div>
-                        <Timer deadline={props.deadline} />
+                        <Timer deadline={deadline} />
                     </div>
                 </li>
             )}

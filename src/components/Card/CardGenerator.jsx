@@ -29,13 +29,12 @@ const CardGenerator = () =>{
             {isFormVisible ? (
           <form 
             onSubmit={handleSubmit}
-            className="p-6 rounded-lg shadow flex flex-col"
-            style={{backgroundColor: "#303642"}}>
+            className="p-6 rounded-lg shadow flex flex-col glass">
             <input
               type="text"
               value={newCardText}
               onChange={handleInputChange}
-              placeholder="Enter card text"
+              placeholder="Enter card title"
               className='rounded-full p-3'
               
             />
